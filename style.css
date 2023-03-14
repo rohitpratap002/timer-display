@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #292929;
+}
+h1{
+    font-size: 3rem;
+    color: #ffffffd1;
+    z-index: 1;
+}
+.main-window{
+    /* border: 2px solid violet; */
+    width: 70%;
+    height: 50vh;
+    border-radius: 12px;
+    background: transparent;
+    box-shadow:  10px 10px 20px #1b1b1b,
+             -10px -10px 20px #383838, inset 10px 10px 20px #1b1b1b,
+             inset -10px -10px 20px #383838;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: #292929;
+    font-size: 3rem;
+    text-shadow: 2px 2px 2px #0e0e0e, -2px -2px 2px #818181;
+}
+.input{
+    height: 2.5rem;
+    width: 6rem;
+    font-size: 1.5rem;
+    background: transparent;
+    outline: none;
+    margin: .5rem;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    -moz-appearance: textfield;
+    border: none;
+    box-shadow: 3px 3px 6px #0e0e0e, -3px -3px 6px #818181;
+}
+.input:placeholder-shown{
+    -webkit-text-fill-color:#acacac;
+}
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.input-class{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.btn-primary{
+    padding: 5px 15px;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 3px;
+    
+}
+
+
+.btn{
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    box-shadow:  3px 3px 6px #0e0e0e,
+             -3px -3px 6px #818080, inset -3px -3px 6px #0e0e0e,
+             inset 3px 3px 6px #535353;
+}
+.btn:hover{
+    color:#d6d6d6d1;
+    box-shadow: inset 3px 3px 6px #0e0e0e,
+             inset -3px -3px 6px #535353;
+}
+
+
+
+#timer-display{
+    display: none;
+}
+#time{
+    color: #292929;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    text-shadow: 3px 3px 6px #0e0e0e, -3px -3px 6px #818181;
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
