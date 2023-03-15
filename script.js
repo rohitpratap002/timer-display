@@ -3,6 +3,8 @@ const input_handler = document.getElementById("input-handler");
 const timer_display = document.getElementById("timer-display");
 //Buttons
 const strt_btn = document.getElementById("start-button");
+const pause_btn = document.getElementById("pause-button");
+const reset_btn = document.getElementById("reset-button");
 //input Boxes
 let inputH = document.getElementById("hours-box"); let inputM = document.getElementById("min-box");
 let inputS = document.getElementById("sec-box");
@@ -12,11 +14,12 @@ let inputS = document.getElementById("sec-box");
 let timep = document.getElementById("time");
 let spanH = document.getElementById("spanH");
 let spanM = document.getElementById("spanM");
-let sapnS = document.getElementById("spanS");
+let spanS = document.getElementById("spanS");
 let inH,inM,inS;
 
 // Interval
 let interval;
+let pause= true;
 
 //sound
 let sound=document.getElementById("sound");
@@ -59,7 +62,23 @@ function start_timer() {
     }
         
 }
+function pause_timer(){
+    if(pause){
+        interval= setInterval(timer_down,1000);
+    }
+    else{
+        pause=true;
+        clearInterval(interval);
+    }
+}
+
+function reset_timer(){
+    console.log("reset");
+    location.reload()
+}
+
 function timer_down() {
+    pause=false;
     inS=inS-1;
     spanH.innerHTML= inH;
     if(inM<=9){
@@ -107,9 +126,9 @@ function timer_down() {
     }
 }
 const timesUp =() => {
-    intH = 0;
-    intM = 0;
-    intS = 0;
+    inH = 0;
+    inM = 0;
+    inS = 0;
     spanH.innerHTML= inH;
     if(inM<=9){
         spanM.innerHTML= "0"+inM;
@@ -122,6 +141,7 @@ const timesUp =() => {
         spanS.innerHTML= inS;
     }
     clearInterval(interval);
+    pause_btn.style.display="none";
     sound.play();
 }
 
@@ -129,3 +149,5 @@ const timesUp =() => {
 
 // Event listners
 strt_btn.addEventListener("click",start_timer);
+pause_btn.addEventListener("click",pause_timer);
+reset_btn.addEventListener("click",reset_timer);
